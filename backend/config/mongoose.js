@@ -1,13 +1,17 @@
 import mongoose from 'mongoose'
 
-mongoose.connect('mongodb://localhost/kgp-shop-db')
+const connectDB = async () => {
+  try {
+    const conn = await mongoose.connect(process.env.MONGO_URI, {
+      useUnifiedTopology: true,
+      useNewUrlParser: true
+    })
 
-const db = mongoose.connection;
+    console.log(`MongoDB Connected: ${conn.connection.host}`.cyan.underline)
+  } catch (error) {
+    console.error(`Error: ${error.message}`.red.underline.bold)
+    process.exit(1)
+  }
+}
 
-db.on('error', console.error.bind(console, 'Error connecting to db'));
-
-db.once('open', function(){
-    console.log("Successfully connected to database.".cyan.bold);
-})
-
-export default db;
+export default connectDB

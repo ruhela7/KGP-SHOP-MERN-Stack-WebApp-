@@ -3,7 +3,7 @@ import path from 'path'
 import morgan from "morgan"
 import colors from 'colors'
 import dotenv from "dotenv"
-import db from "./config/mongoose.js";
+import connectDB from "./config/mongoose.js";
 import productRoutes from "./routes/productRoutes.js"
 import userRoutes from "./routes/userRoutes.js"
 import orderRoutes from "./routes/orderRoutes.js"
@@ -12,6 +12,8 @@ import { notFound, errorHandler } from "./middleware/errorMiddleware.js"
 
 
 dotenv.config()
+
+await connectDB()
 
 const app = express();
 
