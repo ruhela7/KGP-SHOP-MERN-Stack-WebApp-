@@ -15,7 +15,7 @@ dotenv.config()
 
 await connectDB()
 
-const app = express();
+const app=express();
 
 if (process.env.NODE_ENV === 'development') {
     app.use(morgan('dev'))

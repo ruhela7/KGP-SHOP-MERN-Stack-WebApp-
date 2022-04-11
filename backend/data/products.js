@@ -71,6 +71,18 @@ const products = [
     rating: 4,
     numReviews: 5,
   },
+  {
+    name: 'Tesla watch x-pro',
+    image: '/images/tesla.jpg',
+    description:
+      'Tesla Watch x Series 6 GPS + Cellular - 44 mm Silver Stainless Steel Case with Silver Milanese Loop',
+    brand: 'Tesla',
+    category: 'Electronics',
+    price: 99.99,
+    countInStock: 6,
+    rating: 4,
+    numReviews: 5,
+  },
 ]
 
 export default products
