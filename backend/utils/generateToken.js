@@ -4,7 +4,7 @@ import jwt from 'jsonwebtoken'
 const generateToken = (id) =>{
     //NOTE: this is the actual function that generates token.
     //it takes payload(id here) & one secret key
-    return jwt.sign({id}, process.env.JWT_SECRET, {
+    return jwt.sign({id}, "secret-key", {
         expiresIn: '30d' //d = days
     })
 }
